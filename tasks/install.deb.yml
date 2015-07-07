@@ -1,12 +1,15 @@
 ---
 
 - name: grafana-install | Add debian repository pt. 1
+  sudo: true
   apt_key: url='{{grafana_apt_key}}' id=D59097AB
 
 - name: grafana-install | Add debian repository pt. 2
+  sudo: true
   apt_repository: repo='{{grafana_apt_repository}}'
 
 - set_fact: grafana_release='grafana={{grafana_version}}'
 
 - name: grafana-install | Install Grafana
+  sudo: true
   apt: name="{{grafana_release}}"
