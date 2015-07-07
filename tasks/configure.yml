@@ -1,10 +1,12 @@
 ---
 
 - name: grafana-configure | Setup grafana
+  sudo: true
   template: src=grafana.ini.j2 dest=/etc/grafana/grafana.ini
   notify: grafana restart
 
 - name: grafana-configure | Ensure that Grafana-Server is started
+  sudo: true
   service: name=grafana-server state=started enabled=yes
 
 # - name: grafana-configure | Setup passlib
