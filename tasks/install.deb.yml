@@ -13,3 +13,5 @@
 - name: grafana-install | Install Grafana
   sudo: true
   apt: name="{{grafana_release}}"
+  notify:
+    - grafana restart
