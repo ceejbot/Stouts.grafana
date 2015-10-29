@@ -12,6 +12,6 @@
 
 - name: grafana-install | Install Grafana
   sudo: true
-  apt: name="{{grafana_release}}"
+  apt: name="{{grafana_release}}" update_cache=yes
   notify:
     - grafana restart
