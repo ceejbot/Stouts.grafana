@@ -10,7 +10,7 @@
 
 - name: grafana-install | add apt beta repo
   become: true
-  apt_repository: repo='{{grafana_apt_repository}}'
+  apt_repository: repo='{{grafana_beta_apt_repo}}'
 
 - set_fact: grafana_release='grafana={{grafana_version}}'
 
