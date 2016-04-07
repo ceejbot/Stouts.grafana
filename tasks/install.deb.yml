@@ -1,10 +1,14 @@
 ---
 
-- name: grafana-install | Add debian repository pt. 1
+- name: grafana-install | add apt key
   become: true
   apt_key: url='{{grafana_apt_key}}' id=D59097AB
 
-- name: grafana-install | Add debian repository pt. 2
+- name: grafana-install | add apt repo
+  become: true
+  apt_repository: repo='{{grafana_apt_repository}}'
+
+- name: grafana-install | add apt beta repo
   become: true
   apt_repository: repo='{{grafana_apt_repository}}'
 
